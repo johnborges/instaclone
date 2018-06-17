@@ -1,2 +1,2 @@
 # instaclone
-Instagram clone using ReactJS
+Instagram clone built using react-native
