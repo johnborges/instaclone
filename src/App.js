@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { createBottomTabNavigator } from 'react-navigation';
-import Icon from 'react-native-vector-icons/Foundation';
+import Icon from 'react-native-vector-icons/Ionicons';
 import { Home } from './screens/Home';
 import { Search } from './screens/Search';
 import { Photo } from './screens/Photo';
@@ -24,13 +24,19 @@ const RootStack = createBottomTabNavigator(
         if (routeName === 'Home') {
           iconName = 'home';
         } 
-        // else if (routeName === 'Settings') {
-        //   iconName = `ios-options${focused ? '' : '-outline'}`;
-        // }
-
-        // You can return any component that you like here! We usually use an
-        // icon component from react-native-vector-icons
-        return <Icon name={iconName} size={25} color={tintColor} />;
+        else if (routeName === 'Search') {
+          iconName = 'search';
+        }
+        else if (routeName === 'Photo') {
+          iconName = 'camera';
+        }
+        else if (routeName === 'Likes') {
+          iconName = 'heart';
+        }
+        else if (routeName === 'Profile') {
+          iconName = 'person';
+        }
+        return <Icon name={`ios-${iconName}`} size={25} color={tintColor} />;
       },
     }),
     tabBarOptions: {
