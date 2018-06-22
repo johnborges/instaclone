@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import { Text, View } from 'react-native';
 
-export class Likes extends Component {
+export class Settings extends Component {
+
+  static navigationOptions = {
+    title: 'Settings',
+  };
+
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Likes Coming Soon...</Text>
+        <Text>Settings Coming Soon...</Text>
       </View>
     )
   }

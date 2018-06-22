@@ -9,20 +9,29 @@ import { Search } from './screens/Search';
 import { Photo } from './screens/Photo';
 import { Likes } from './screens/Likes';
 import { Profile } from './screens/Profile';
+import { Settings } from './screens/Settings';
 
+// need to add all other possible routes from each tab stack
 const HomeStack = createStackNavigator(
   {
-    Home: Home
+    Home: Home,
+    Profile: Profile
+  }
+);
+const ProfileStack = createStackNavigator(
+  {
+    Profile: Profile,
+    Settings: Settings  
   }
 );
 
-const TabStack = createBottomTabNavigator(
+const TabNav = createBottomTabNavigator(
   {
     Home: HomeStack,
     Search: Search,
     Photo: Photo,
     Likes: Likes,
-    Profile: Profile
+    UserProfile: ProfileStack
   },
   {
     initialRouteName: 'Home',
@@ -42,7 +51,7 @@ const TabStack = createBottomTabNavigator(
         else if (routeName === 'Likes') {
           iconName = 'heart';
         }
-        else if (routeName === 'Profile') {
+        else if (routeName === 'UserProfile') {
           iconName = 'person';
         }
         return <Icon name={`ios-${iconName}`} size={25} color={tintColor} />;
@@ -58,6 +67,6 @@ const TabStack = createBottomTabNavigator(
 
 export default class App extends Component {
   render() {
-    return (<TabStack />);
+    return (<TabNav />);
   }
 }

@@ -10,7 +10,7 @@ export class Photo extends Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Photo!</Text>
+        <Text>Photos Coming Soon...</Text>
       </View>
     )
   }
