@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { createBottomTabNavigator } from 'react-navigation';
+import { createBottomTabNavigator,
+  createStackNavigator  
+} from 'react-navigation';
 import Icon from 'react-native-vector-icons/Foundation';
 import { Home } from './screens/Home';
 import { Search } from './screens/Search';
@@ -7,9 +9,15 @@ import { Photo } from './screens/Photo';
 import { Likes } from './screens/Likes';
 import { Profile } from './screens/Profile';
 
-const RootStack = createBottomTabNavigator(
+const HomeStack = createStackNavigator(
   {
-    Home: Home,
+    Home: Home
+  }
+);
+
+const TabStack = createBottomTabNavigator(
+  {
+    Home: HomeStack,
     Search: Search,
     Photo: Photo,
     Likes: Likes,
@@ -43,6 +51,6 @@ const RootStack = createBottomTabNavigator(
 
 export default class App extends Component {
   render() {
-    return (<RootStack />);
+    return (<TabStack />);
   }
 }

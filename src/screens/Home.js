@@ -4,7 +4,7 @@ import { Text, View } from 'react-native';
 export class Home extends Component {
 
   static navigationOptions = {
-    title: 'Home',
+    title: 'Instaclone',
   };
 
   render() {
