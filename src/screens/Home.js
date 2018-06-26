@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { ScrollView } from 'react-native';
 
 import Post from '../components/Post';
 
@@ -11,9 +11,9 @@ export class Home extends Component {
 
   render() {
     return (
-      <View>
+      <ScrollView>
         <Post />
-      </View>
+      </ScrollView>
     )
   }
 }

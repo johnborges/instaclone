@@ -9,9 +9,12 @@ export default class PostBody extends Component {
     return (
       <View style={styles.container}>
         <PostActions />
-        <Text style={styles.likeCount}>
+        <View style={styles.likeCount}>
           <Icon style={styles.heart} name={'ios-heart'} size={10}/>
-          34,384 likes
+          <Text>34,384 likes</Text>
+        </View>
+        <Text numberOfLines={3}>
+          Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas faucibus mollis interdum.
         </Text>
       </View>
     )
@@ -22,12 +25,14 @@ export default class PostBody extends Component {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: 'white',
-    padding: 10,
+    padding: 10 
   },
   heart: {
     marginRight: 5
   },
   likeCount: {
-    marginTop: 10,
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 10,
   }
 });

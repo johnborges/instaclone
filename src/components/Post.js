@@ -3,12 +3,13 @@ import { View, Image, StyleSheet } from 'react-native';
 
 import PostHeader from './PostHeader';
 import PostBody from './PostBody';
+import Comments from './Comments';
 
 export default class Post extends Component {
 
   render() {
     return (
-      <View>
+      <View style={styles.container}>
         <PostHeader />
         <Image 
           source={{
@@ -17,6 +18,7 @@ export default class Post extends Component {
           style={styles.pic}
         />
         <PostBody />
+        <Comments />
       </View>
     )
   }
@@ -25,7 +27,7 @@ export default class Post extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: 'column'
+    backgroundColor: 'white',
   },
   pic: {
     width: 350,
