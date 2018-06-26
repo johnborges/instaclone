@@ -1,20 +1,25 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
+import Comment from './Comment';
 
 const comments = [
   {
+    id: 1,
     author: 'user_123',
     content: 'Great pic!'
   },
   {
+    id: 2,
     author: 'hullman',
     content: 'another great commet'
   },
   {
+    id: 3,
     author: 'alexis_bred',
     content: 'Looking back on the year'
   },
   {
+    id: 4,
     author: 'user_999',
     content: 'Awesome'
   },
@@ -22,19 +27,26 @@ const comments = [
 
 export default class Comments extends Component {
 
+  constructor(props) {
+    super(props);
+  }
+
   render() {
-    let commentList = comments.map( (comment) => {
+    let viewAll;
+    let commentList = comments.slice(0,3).map( (comment) => {
       return (
-        <View style={styles.commentContainer}>
-          <Text style={styles.author}>{comment.author}</Text>
-          <Text>{comment.content}</Text>
-        </View>
+        <Comment key={comment.id} author={comment.author} content={comment.content} />
       );
     });
+
+    let commentsCount = commentList.length;
+    if(commentsCount > 3)
+      viewAll =  <Text style={{color: 'grey'}}>View all {commentsCount} comments</Text>;
 
     return (
       <View style={styles.container}>
         {commentList}
+        {viewAll}
       </View>
     )
   }

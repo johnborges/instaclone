@@ -1,7 +1,19 @@
 import React, { Component } from 'react';
-import { ScrollView } from 'react-native';
+import { FlatList } from 'react-native';
 
-import Post from '../components/Post';
+import Post from '../components/Post/Post';
+
+const posts = [
+  {
+    id: 1
+  },
+  {
+    id: 2
+  },
+  {
+    id: 3
+  }
+];
 
 export class Home extends Component {
 
@@ -11,9 +23,11 @@ export class Home extends Component {
 
   render() {
     return (
-      <ScrollView>
-        <Post />
-      </ScrollView>
+      <FlatList
+        data={posts}
+        renderItem={ ({item}) => <Post key={item.id} />}
+      />
+        
     )
   }
 }
