@@ -4,7 +4,7 @@ import {
   createStackNavigator  
 } from 'react-navigation';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { Home } from './screens/Home';
+import { Feed } from './screens/Feed';
 import { Search } from './screens/Search';
 import { Photo } from './screens/Photo';
 import { Likes } from './screens/Likes';
@@ -12,9 +12,9 @@ import { Profile } from './screens/Profile';
 import { Settings } from './screens/Settings';
 
 // need to add all other possible routes from each tab stack
-const HomeStack = createStackNavigator(
+const FeedStack = createStackNavigator(
   {
-    Home: Home,
+    Feed: Feed,
     Profile: Profile
   }
 );
@@ -27,7 +27,7 @@ const ProfileStack = createStackNavigator(
 
 const TabNav = createBottomTabNavigator(
   {
-    Home: HomeStack,
+    Home: FeedStack,
     Search: Search,
     Photo: Photo,
     Likes: Likes,

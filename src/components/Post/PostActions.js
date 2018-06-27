@@ -9,6 +9,7 @@ export default class PostActions extends Component {
       <View style={styles.container}>
         <Icon style={styles.icon} name={'ios-heart-outline'} size={24}/>
         <Icon style={styles.icon} name={'ios-chatbubbles-outline'} size={25}/>
+        <Icon style={styles.icon} name={'ios-redo-outline'} size={25}/>
       </View>
     )
   }

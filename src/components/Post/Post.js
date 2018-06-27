@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Image, StyleSheet } from 'react-native';
+import { Text, View, Image, StyleSheet } from 'react-native';
 
 import PostHeader from './PostHeader';
 import PostBody from './PostBody';
@@ -19,6 +19,7 @@ export default class Post extends Component {
         />
         <PostBody />
         <Comments />
+        <Text style={styles.timestamp}>21 hours ago</Text>
       </View>
     )
   }
@@ -32,5 +33,10 @@ const styles = StyleSheet.create({
   pic: {
     width: 350,
     height: 200,
+  },
+  timestamp: {
+    color: 'grey',
+    fontSize: 10,
+    marginLeft: 10
   }
 });

@@ -15,7 +15,7 @@ const posts = [
   }
 ];
 
-export class Home extends Component {
+export class Feed extends Component {
 
   static navigationOptions = {
     title: 'Instaclone',

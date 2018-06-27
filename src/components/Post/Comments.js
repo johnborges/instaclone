@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Button, View, StyleSheet } from 'react-native';
 import Comment from './Comment';
 
 const comments = [
@@ -31,6 +31,10 @@ export default class Comments extends Component {
     super(props);
   }
 
+  _viewAllComments() {
+    // navigate to full comments screen
+  }
+
   render() {
     let viewAll;
     let commentList = comments.slice(0,3).map( (comment) => {
@@ -39,9 +43,11 @@ export default class Comments extends Component {
       );
     });
 
-    let commentsCount = commentList.length;
-    if(commentsCount > 3)
-      viewAll =  <Text style={{color: 'grey'}}>View all {commentsCount} comments</Text>;
+    let commentsCount = comments.length;
+    if(commentsCount > 3){
+      // change to Touchable Text for better styling options
+      viewAll =  <Button onPress={this._viewAllComments} title="View all comments" color="grey" />;
+    }
 
     return (
       <View style={styles.container}>
