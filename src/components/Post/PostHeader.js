@@ -1,8 +1,20 @@
 import React, { Component } from 'react';
 import { View, Image, Text, StyleSheet, TouchableWithoutFeedback, ActionSheetIOS } from 'react-native';
+import { withNavigation } from 'react-navigation';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-export default class PostHeader extends Component {
+/**
+ * Todo: Support long press open model profile summary
+ */
+class PostHeader extends Component {
+
+  constructor(props) {
+    super(props);
+  }
+
+  _onHeaderTap() {
+    this.props.navigation.navigate('Profile');
+  }
 
   _onMoreButtonTap() {
     ActionSheetIOS.showActionSheetWithOptions({
@@ -27,15 +39,19 @@ export default class PostHeader extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.container2}>
-          <Image 
-            source={{
-              uri: 'https://fakeimg.pl/50x50/'
-            }}
-            style={styles.thumbnail}
-          />
-          <Text>profile_name</Text>
+          <TouchableWithoutFeedback onPress={() => {this.props.navigation.navigate('Profile')}}>
+            <Image 
+              source={{
+                uri: 'https://fakeimg.pl/50x50/'
+              }}
+              style={styles.thumbnail}
+            />
+          </TouchableWithoutFeedback>
+          <TouchableWithoutFeedback onPress={ () => {this.props.navigation.navigate('Profile')} }>
+            <View><Text>profile_name</Text></View>
+          </TouchableWithoutFeedback>
         </View>
-        <TouchableWithoutFeedback onPress={this._onMoreButtonTap}>
+        <TouchableWithoutFeedback onPress={this._onMoreButtonTap.bind(this)}>
           <Icon name={'ios-more'} size={25} />
         </TouchableWithoutFeedback>
       </View>
@@ -43,6 +59,8 @@ export default class PostHeader extends Component {
   }
 
 }
+
+export default withNavigation(PostHeader);
 
 const styles = StyleSheet.create({
   container: {
