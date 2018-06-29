@@ -54,7 +54,7 @@ const TabNav = createBottomTabNavigator(
         else if (routeName === 'UserProfile') {
           iconName = 'person';
         }
-        return <Icon name={`ios-${iconName}`} size={25} color={tintColor} />;
+        return <Icon name={`ios-${iconName}`} size={30} color={tintColor} />;
       },
     }),
     tabBarOptions: {

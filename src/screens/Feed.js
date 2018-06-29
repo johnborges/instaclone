@@ -25,7 +25,8 @@ export class Feed extends Component {
     return (
       <FlatList
         data={posts}
-        renderItem={ ({item}) => <Post key={item.id} />}
+        renderItem={ ({item}) => <Post />}
+        keyExtractor={(item, index) => index.toString()}
       />
         
     )

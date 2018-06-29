@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   pic: {
-    width: 350,
+    width: 400,
     height: 200,
   },
   timestamp: {
