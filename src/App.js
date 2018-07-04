@@ -38,23 +38,28 @@ const TabNav = createBottomTabNavigator(
     navigationOptions: ({ navigation }) => ({
       tabBarIcon: ({ focused, tintColor }) => {
         const { routeName } = navigation.state;
-        let iconName;
+        let iconName, size;
         if (routeName === 'Home') {
           iconName = 'home';
+          size = 30;
         } 
         else if (routeName === 'Search') {
           iconName = 'search';
+          size = 30;
         }
         else if (routeName === 'Photo') {
-          iconName = 'camera';
+          iconName = 'add-circle-outline';
+          size = 40;
         }
         else if (routeName === 'Likes') {
           iconName = 'heart';
+          size = 30;
         }
         else if (routeName === 'UserProfile') {
           iconName = 'person';
+          size = 30;
         }
-        return <Icon name={`ios-${iconName}`} size={30} color={tintColor} />;
+        return <Icon name={`ios-${iconName}`} size={size} color={tintColor} />;
       },
     }),
     tabBarOptions: {

@@ -36,7 +36,8 @@ const styles = StyleSheet.create({
   },
   timestamp: {
     color: 'grey',
-    fontSize: 10,
-    marginLeft: 10
+    fontSize: 11,
+    marginLeft: 10,
+    marginBottom: 10
   }
 });
