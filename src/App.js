@@ -11,6 +11,12 @@ import { Likes } from './screens/Likes';
 import { Profile } from './screens/Profile';
 import { Settings } from './screens/Settings';
 
+import Amplify, { API } from "aws-amplify";
+import aws_config from "./aws-exports";
+ 
+// Considering you have an existing aws-exports.js configuration file 
+Amplify.configure(aws_config);
+
 // need to add all other possible routes from each tab stack
 const FeedStack = createStackNavigator(
   {

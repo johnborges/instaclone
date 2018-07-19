@@ -20,12 +20,10 @@ From within your project root run:
 
 Initialize your project in AWS Mobile Hub
 
-`$ awsmobile init`
+`$ awsmobile init <optional-mobile-hub-project-id-for-existing-projects>`
 
 Follow subsequent prompts to finish project setup.
 
 Link an the `aws-amplify` dependancy
 
 `$ react-native link amazon-cognito-identity-js`
-
-
